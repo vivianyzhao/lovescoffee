@@ -1,12 +1,27 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/resume">Resume</router-link> |
+    <router-link to="/loves">Coffee & Dessert</router-link> |
+    <router-link to="/contact">Contact</router-link>
   </div>
-  <router-view/>
+  <router-view>{{ test }}</router-view>
 </template>
 
+<script lang="ts">
+import { defineComponent, ref, Ref } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const test: Ref<any> = ref('Coming Soon...')
+
+    return { test }
+  }
+})
+</script>
+
 <style lang="scss">
+@import "src/styles/app";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
